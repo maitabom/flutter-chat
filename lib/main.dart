@@ -1,4 +1,4 @@
-import 'package:chat/pages/auth.dart';
+import 'package:chat/pages/auth_or_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Chat',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const AuthPage(),
+      home: const AuthOrAppPage(),
       debugShowCheckedModeBanner: false,
     );
   }
