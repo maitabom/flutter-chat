@@ -1,6 +1,6 @@
 import 'package:chat/components/auth_form.dart';
 import 'package:chat/models/auth_form_data.dart';
-import 'package:chat/services/auth/auth_mock_service.dart';
+import 'package:chat/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatefulWidget {
@@ -14,15 +14,17 @@ class _AuthPageState extends State<AuthPage> {
   bool _isLoading = false;
 
   Future<void> _handleSubmit(AuthFormData formData) async {
+    final authService = AuthService(AuthServiceType.mock);
+
     try {
       setState(() {
         _isLoading = true;
       });
 
       if (formData.isLogin) {
-        await AuthMockService().login(formData.email, formData.password);
+        await authService.login(formData.email, formData.password);
       } else {
-        await AuthMockService().signUp(
+        await authService.signUp(
           formData.name,
           formData.email,
           formData.password,

@@ -1,4 +1,4 @@
-import 'package:chat/services/auth/auth_mock_service.dart';
+import 'package:chat/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -6,6 +6,8 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authService = AuthService(AuthServiceType.mock);
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -14,7 +16,7 @@ class ChatPage extends StatelessWidget {
             Text('Chat Page'),
             TextButton(
               onPressed: () {
-                AuthMockService().logout();
+                authService.logout();
               },
               child: Text('Sair'),
             ),
