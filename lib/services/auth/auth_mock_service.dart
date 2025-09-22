@@ -11,9 +11,16 @@ class AuthMockService implements AuthService {
 
   static final Map<String, ChatUser> _users = {};
 
+  static final _defaultUser = ChatUser(
+    id: 'default',
+    name: 'Usuário de Teste',
+    email: 'user@test.com',
+    imageUrl: 'assets/avatar.png',
+  );
+
   static final _userStream = Stream<ChatUser?>.multi((controller) {
     _controller = controller;
-    _updateUser(null);
+    _updateUser(_defaultUser);
   });
 
   @override
