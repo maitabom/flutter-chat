@@ -36,6 +36,11 @@ class _NewMessageState extends State<NewMessage> {
             onChanged: (message) => setState(() {
               _enteredMessage = message;
             }),
+            onSubmitted: (_) {
+              if (_enteredMessage.trim().isNotEmpty) {
+                _sendMessage();
+              }
+            },
             decoration: InputDecoration(labelText: 'Enviar mensagem'),
           ),
         ),
