@@ -19,10 +19,10 @@ class ChatMockService implements ChatService {
     ),
     ChatMessage(
       id: '2',
-      text: 'Como posso ajudar você hoje?',
+      text: 'Oi! Como posso ajudar você hoje?',
       create: DateTime.now().subtract(Duration(minutes: 3)),
-      userId: 'test_user',
-      userName: 'Destinatário Teste',
+      userId: 'default',
+      userName: 'Usuário Teste',
       userImagemUrl: 'assets/avatar.png',
     ),
     ChatMessage(
