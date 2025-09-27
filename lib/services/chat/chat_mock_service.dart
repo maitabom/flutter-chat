@@ -37,7 +37,7 @@ class ChatMockService implements ChatService {
 
   static final _messageStream = Stream<List<ChatMessage>>.multi((controller) {
     _controller = controller;
-    _controller?.add(_messages);
+    _controller?.add(_messages.reversed.toList());
   });
 
   @override
@@ -57,7 +57,7 @@ class ChatMockService implements ChatService {
     );
 
     _messages.add(newMessage);
-    _controller?.add(_messages);
+    _controller?.add(_messages.reversed.toList());
 
     return newMessage;
   }
